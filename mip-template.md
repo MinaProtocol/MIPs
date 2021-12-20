@@ -1,5 +1,5 @@
 ---
-eip: <to be assigned>
+mip: <to be assigned>
 title: <The MIP title is a few words, not a complete sentence>
 description: <Description is one full (short) sentence>
 author: <a comma separated list of the author's or authors' name + GitHub username (in parenthesis), or name and email (in angle brackets).  Example, FirstName LastName (@GitHubUsername), FirstName LastName <foo@bar.com>, FirstName (@GitHubUsername) and GitHubUsername (@GitHubUsername)>
@@ -14,7 +14,7 @@ requires (*optional): <MIP number(s)>
 MIP Template
 This is the suggested template for new MIPs.
 
-Note that an MIP number will be assigned by an editor. When opening a pull request to submit your MIP, please use an abbreviated title in the filename, `eip-draft_title_abbrev.md`.
+Note that an MIP number will be assigned by an editor. When opening a pull request to submit your MIP, please use an abbreviated title in the filename, `mip-draft_title_abbrev.md`.
 
 The title should be 44 characters or less. It should not repeat the MIP number in title, irrespective of the category.
 
@@ -42,11 +42,11 @@ All MIPs that introduce backwards incompatibilities must include a section descr
 
 ## Test Cases
 
-Test cases for an implementation are mandatory for MIPs that are affecting consensus changes. If the test suite is too large to reasonably be included inline, then consider adding it as one or more files in `../assets/eip-####/`.
+Test cases for an implementation are mandatory for MIPs that are affecting consensus changes. If the test suite is too large to reasonably be included inline, then consider adding it as one or more files in `../assets/mip-####/`.
 
 ## Reference Implementation
 
-An optional section that contains a reference/example implementation that people can use to assist in understanding or implementing this specification. If the implementation is too large to reasonably be included inline, then consider adding it as one or more files in `../assets/eip-####/`.
+An optional section that contains a reference/example implementation that people can use to assist in understanding or implementing this specification. If the implementation is too large to reasonably be included inline, then consider adding it as one or more files in `../assets/mip-####/`.
 
 ## Security Considerations
 
