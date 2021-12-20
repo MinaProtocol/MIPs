@@ -8,15 +8,15 @@ status: Draft
 type: <Standards Track, Meta, or Informational>
 category (*only required for Standards Track): <Core, Networking, Interface, or ERC>
 created: <date created on, in ISO 8601 (yyyy-mm-dd) format>
-requires (*optional): <EIP number(s)>
+requires (*optional): <MIP number(s)>
 ---
 
 MIP Template
-This is the suggested template for new EIPs.
+This is the suggested template for new MIPs.
 
-Note that an EIP number will be assigned by an editor. When opening a pull request to submit your EIP, please use an abbreviated title in the filename, `eip-draft_title_abbrev.md`.
+Note that an MIP number will be assigned by an editor. When opening a pull request to submit your MIP, please use an abbreviated title in the filename, `eip-draft_title_abbrev.md`.
 
-The title should be 44 characters or less. It should not repeat the EIP number in title, irrespective of the category.
+The title should be 44 characters or less. It should not repeat the MIP number in title, irrespective of the category.
 
 ## Abstract
 
@@ -24,7 +24,7 @@ Abstract is a multi-sentence (short paragraph) technical summary. This should be
 
 ## Motivation
 
-The motivation section should describe the "why" of this EIP. What problem does it solve? Why should someone want to implement this standard? What benefit does it provide to the Ethereum ecosystem? What use cases does this EIP address?
+The motivation section should describe the "why" of this MIP. What problem does it solve? Why should someone want to implement this standard? What benefit does it provide to the Ethereum ecosystem? What use cases does this MIP address?
 
 ## Specification
 
@@ -38,11 +38,11 @@ The rationale fleshes out the specification by describing what motivated the des
 
 ## Backwards Compatibility
 
-All EIPs that introduce backwards incompatibilities must include a section describing these incompatibilities and their severity. The EIP must explain how the author proposes to deal with these incompatibilities. EIP submissions without a sufficient backwards compatibility treatise may be rejected outright.
+All MIPs that introduce backwards incompatibilities must include a section describing these incompatibilities and their severity. The MIP must explain how the author proposes to deal with these incompatibilities. MIP submissions without a sufficient backwards compatibility treatise may be rejected outright.
 
 ## Test Cases
 
-Test cases for an implementation are mandatory for EIPs that are affecting consensus changes. If the test suite is too large to reasonably be included inline, then consider adding it as one or more files in `../assets/eip-####/`.
+Test cases for an implementation are mandatory for MIPs that are affecting consensus changes. If the test suite is too large to reasonably be included inline, then consider adding it as one or more files in `../assets/eip-####/`.
 
 ## Reference Implementation
 
@@ -50,7 +50,7 @@ An optional section that contains a reference/example implementation that people
 
 ## Security Considerations
 
-All EIPs must contain a section that discusses the security implications/considerations relevant to the proposed change. Include information that might be important for security discussions, surfaces risks and can be used throughout the life cycle of the proposal. E.g. include security-relevant design decisions, concerns, important discussions, implementation-specific guidance and pitfalls, an outline of threats and risks and how they are being addressed. EIP submissions missing the "Security Considerations" section will be rejected. An EIP cannot proceed to status "Final" without a Security Considerations discussion deemed sufficient by the reviewers.
+All MIPs must contain a section that discusses the security implications/considerations relevant to the proposed change. Include information that might be important for security discussions, surfaces risks and can be used throughout the life cycle of the proposal. E.g. include security-relevant design decisions, concerns, important discussions, implementation-specific guidance and pitfalls, an outline of threats and risks and how they are being addressed. MIP submissions missing the "Security Considerations" section will be rejected. An MIP cannot proceed to status "Final" without a Security Considerations discussion deemed sufficient by the reviewers.
 
 ## Copyright
 
