@@ -30,7 +30,7 @@ Template and Github repo for the beta version of MIP to be created once the 'Ide
 
 ## MIP Process
 
-![](https://i.imgur.com/KDhpuE5.jpg)
+![](https://github.com/MinaProtocol/MIPs/blob/process-image-update/assets/MIP%20Process%20Diagram.jpg?raw=true)
 
 **Idea** - The MIP is put forward by the author(s) for community discussion and sentiment gathering on Mina Research and via Polling e.g., (Pol.is). The MIP is not tracked within the MIP repository.
 
@@ -87,6 +87,7 @@ The team responsible for checking technical specifications and implementing the 
 A group comprised of subject matter experts representative of impacted developers and community members. It is important that impacted stakeholders for a particular MIP are identified and included in the process. This is not a fixed group and impacted participants may vary for each MIP.
 
 ## What belongs in a successful MIP?
+
 Each should have the following parts:
 
 **Preamble** - RFC 822 style headers containing metadata about the MIP, including the MIP number, a short descriptive title (limited to a maximum of 44 characters), a description (limited to a maximum of 140 characters), and the author details. Irrespective of the category, the title and description should not include MIP number. See below for details.
@@ -95,25 +96,25 @@ Each should have the following parts:
 
 **Motivation** (optional) - A motivation section is critical for MIPs that want to change the Mina protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the MIP solves. MIP submissions without sufficient motivation may be rejected outright.
 
-**Specification** - The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations for any of the current Mina implementations. 
+**Specification** - The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations for any of the current Mina implementations.
 
 **Rationale** - The rationale fleshes out the specification by describing what motivated the design and why particular design decisions were made. It should describe alternate designs that were considered and related work, e.g. how the feature is supported in other languages. The rationale may also provide evidence of consensus within the community, and should discuss important objections or concerns raised during discussion.
 
-**Backwards Compatibility** - All MIP that introduce backwards incompatibilities must include a section describing these incompatibilities and their severity. 
+**Backwards Compatibility** - All MIP that introduce backwards incompatibilities must include a section describing these incompatibilities and their severity.
 
 The MIP must explain how the author proposes to deal with these incompatibilities. MIP submissions without a sufficient backwards compatibility treatise may be rejected outright.
 
 **Test Cases** - Test cases for an implementation are mandatory for MIPs.
 
 **Reference Implementation** - An optional section that contains a reference/example implementation that people can use to assist in understanding or implementing this specification.
-    
+
 **Security Considerations** - All MIPs must contain a section that discusses the security implications/considerations relevant to the proposed change. Include information that might be important for security discussions, surfaces risks and can be used throughout the life-cycle of the proposal. E.g. include security-relevant design decisions, concerns, important discussions, implementation-specific guidance and pitfalls, an outline of threats and risks and how they are being addressed. MIP submissions missing the “Security Considerations” section will be rejected. An MIP cannot proceed to status “Final” without a Security Considerations discussion deemed sufficient by the reviewers.
 
-Copyright Waiver - All MIPs must be in the public domain. 
+Copyright Waiver - All MIPs must be in the public domain.
 
 ## MIP Formats and Templates
 
-MIPs should be written in markdown format. 
+MIPs should be written in markdown format.
 
 ## MIP Header Preamble
 
@@ -147,7 +148,7 @@ Headers that permit lists must separate elements with commas.
 
 Headers requiring dates will always do so in the format of ISO 8601 (yyyy-mm-dd).
 
- author header
+author header
 The author header lists the names, email addresses or usernames of the authors/owners of the MIP. Those who prefer anonymity may use a username only, or a first name and a username. The format of the author header value must be:
 
 Random J. User <address@dom.ain>
@@ -166,7 +167,7 @@ It is not possible to use both an email and a GitHub username at the same time. 
 
 At least one author must use a GitHub username, in order to get notified on change requests and have the capability to approve or reject them.
 
- discussions-to header
+discussions-to header
 While a MIP is a draft, a discussions-to header will indicate the URL where the MIP is being discussed.
 
 The preferred discussion URL is a topic on MinaResearch. The URL cannot point to Github pull requests, any URL which is ephemeral, and any URL which can get locked over time (i.e. Reddit topics).
@@ -174,11 +175,11 @@ The preferred discussion URL is a topic on MinaResearch. The URL cannot point to
 ` type header`
 The type header specifies the type of MIP: Standards Track, Meta, or Informational. If the track is Standards please include the subcategory (core, networking, interface, or ERC).
 
- `category header`
+`category header`
 The category header specifies the MIP’s category. This is required for standards-track MIPs only.
 
- `created header`
+`created header`
 The created header records the date that the MIP was assigned a number. Both headers should be in yyyy-mm-dd format, e.g. 2001-08-14.
 
- `requires header`
+`requires header`
 MIPs may have a requires header, indicating the MIP numbers that this MIP depends on.
