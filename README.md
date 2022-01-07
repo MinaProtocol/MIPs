@@ -88,12 +88,98 @@ A group comprised of subject matter experts representative of impacted developer
 
 ## What belongs in a successful MIP?
 
-<TO BE UPDATED)
+Each should have the following parts:
+
+Preamble - RFC 822 style headers containing metadata about the MIP, including the MIP number, a short descriptive title (limited to a maximum of 44 characters), a description (limited to a maximum of 140 characters), and the author details. Irrespective of the category, the title and description should not include MIP number. See below for details.
+
+Abstract - Abstract is a multi-sentence (short paragraph) technical summary. This should be a very terse and human-readable version of the specification section. Someone should be able to read only the abstract to get the gist of what this specification does.
+
+Motivation (optional) - A motivation section is critical for MIPs that want to change the Mina protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the MIP solves. MIP submissions without sufficient motivation may be rejected outright.
+
+Specification - The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations for any of the current Mina implementations.
+
+Rationale - The rationale fleshes out the specification by describing what motivated the design and why particular design decisions were made. It should describe alternate designs that were considered and related work, e.g. how the feature is supported in other languages. The rationale may also provide evidence of consensus within the community, and should discuss important objections or concerns raised during discussion.
+
+Backwards Compatibility - All MIP that introduce backwards incompatibilities must include a section describing these incompatibilities and their severity.
+
+The MIP must explain how the author proposes to deal with these incompatibilities. MIP submissions without a sufficient backwards compatibility treatise may be rejected outright.
+
+Test Cases - Test cases for an implementation are mandatory for MIPs.
+
+Reference Implementation - An optional section that contains a reference/example implementation that people can use to assist in understanding or implementing this specification.
+
+Security Considerations - All MIPs must contain a section that discusses the security implications/considerations relevant to the proposed change. Include information that might be important for security discussions, surfaces risks and can be used throughout the life-cycle of the proposal. E.g. include security-relevant design decisions, concerns, important discussions, implementation-specific guidance and pitfalls, an outline of threats and risks and how they are being addressed. MIP submissions missing the “Security Considerations” section will be rejected. An MIP cannot proceed to status “Final” without a Security Considerations discussion deemed sufficient by the reviewers.
+
+Copyright Waiver - All MIPs must be in the public domain.
 
 ## MIP Formats and Templates
 
-MIPs should be written in markdown format. There is a template to follow <TO BE UPDATED)
+MIPs should be written in markdown format. 
 
 ## MIP Header Preamble
 
-<TO BE UPDATED)
+Each MIP must begin with an RFC 822 style header preamble, preceded and followed by three hyphens (—). This header is also termed “front matter” by Jekyll. The headers must appear in the following order.
+
+mip: MIP number (this is determined by the MIP editor)
+
+title: The MIP title is a few words, not a complete sentence
+
+description: Description is one full (short) sentence
+
+author: The list of the author’s or authors’ name(s) and/or username(s), or name(s) and email(s). Details are below.
+
+discussions-to: The url pointing to the official discussion thread on MinaResearch
+
+status: Draft, Review, Last Call, Finalization, Inactive, Withdrawn
+
+last-call-deadline: The date last call period ends on (Optional field, only needed when status is Last Call)
+
+type: One of Standards Track, Meta, or Informational
+
+category: One of Core, Networking, Interface, or ERC (Optional field, only needed for Standards Track MIPs)
+
+created: Date the MIP was created on
+
+requires: MIP number(s) (Optional field)
+
+withdrawal-reason: A sentence explaining why the MIP was withdrawn. (Optional field, only needed when status is Withdrawn)
+
+Headers that permit lists must separate elements with commas.
+
+Headers requiring dates will always do so in the format of ISO 8601 (yyyy-mm-dd).
+
+author header
+The author header lists the names, email addresses or usernames of the authors/owners of the MIP. Those who prefer anonymity may use a username only, or a first name and a username. The format of the author header value must be:
+
+Random J. User address@dom.ain
+
+or
+
+Random J. User (@username)
+
+if the email address or GitHub username is included, and
+
+Random J. User
+
+if the email address is not given.
+
+It is not possible to use both an email and a GitHub username at the same time. If important to include both, one could include their name twice, once with the GitHub username, and once with the email.
+
+At least one author must use a GitHub username, in order to get notified on change requests and have the capability to approve or reject them.
+
+discussions-to header
+While a MIP is a draft, a discussions-to header will indicate the URL where the MIP is being discussed.
+
+The preferred discussion URL is a topic on MinaResearch. The URL cannot point to Github pull requests, any URL which is ephemeral, and any URL which can get locked over time (i.e. Reddit topics).
+
+ type header
+The type header specifies the type of MIP: Standards Track, Meta, or Informational. If the track is Standards please include the subcategory (core, networking, interface, or ERC).
+
+category header
+The category header specifies the MIP’s category. This is required for standards-track MIPs only.
+
+created header
+The created header records the date that the MIP was assigned a number. Both headers should be in yyyy-mm-dd format, e.g. 2001-08-14.
+
+requires header
+MIPs may have a requires header, indicating the MIP numbers that this MIP depends on.
