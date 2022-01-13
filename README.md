@@ -2,7 +2,7 @@
 
 ## What is a MIP?
 
-MIP stands for Mina Improvement Proposal. An MIP is a design document providing information to the Mina community, or describing a new feature for Mina or changes to the parameters of the protocol. The MIP should provide a concise technical specification of the feature and a rationale for its inclusion in the protocol. The MIP author is responsible for championing their proposal, building consensus within the community and incorporate feedback.
+MIP stands for Mina Improvement Proposal. A MIP is a design document providing information to the Mina community, or describing a new feature for Mina or changes to the parameters of the protocol. The MIP should provide a concise technical specification of the feature and a rationale for its inclusion in the protocol. The MIP author is responsible for championing their proposal, building consensus within the community and incorporate feedback.
 
 ## MIP Rationale
 
@@ -12,7 +12,7 @@ The Mina Foundation intends MIPs to be the primary mechanism for proposing new f
 
 This document is not intended to be the end state process for MIPs, but rahter servers as a draft proposal to encourage discussion and feedback from commnuity and all stakeholders. The process will be evaluated and adapted on a regular basis, based on participant feedback and robustly testing in beta mode by running a series of decisions through the process.
 
-The process described here is inspired by the long track record in this area by other projects, particurlarly Ethereum.
+The process described here is inspired by the long track record in this area by other projects, particurlarly Bitcoin and Ethereum.
 
 ##
 
@@ -42,7 +42,7 @@ Template and Github repo for the beta version of MIP to be created once the 'Ide
 
 If this period results in the identification of high impact issues the MIP will be moved back to Review.
 
-**Finalization** The proposal is deemed to have met all the appropriate criterias consensus to be considered and the Dev Teams are in a position to incorporate the changes into the implementation schedule
+**Finalization** The proposal is deemed to have met all the appropriate criterias to be considered and the Dev Teams are in a position to incorporate the changes into the implementation schedule
 
 **Inactive** A MIP that has been deemed to be inactive for a period of 1 month.
 
@@ -54,7 +54,7 @@ If this period results in the identification of high impact issues the MIP will 
 
 #### 1. Submit a MIP Idea to MinaResearch
 
-If you have an idea you would like to propose, first search through previously proposed or discussed ideas in this MinaResearch. If your idea is original or sufficiently distinct, start a new conversation thread to enable a discussion with the community on MinaResearch (see guidelines [here](https://forums.minaprotocol.com/t/how-to-engage-in-minaresearch-mip-process/4661). You should seek feedback and try to build informal consensus, as well as keep track of any critical feedback so that you can address it later.
+If you have an idea you would like to propose, first search through previously proposed or discussed ideas in MinaResearch. If your idea is original or sufficiently distinct, start a new conversation thread to enable a discussion with the community on MinaResearch (see guidelines [here](https://forums.minaprotocol.com/t/how-to-engage-in-minaresearch-mip-process/4661). You should seek feedback and try to build informal consensus, as well as keep track of any critical feedback so that you can address it later.
 
 For complex decisions, it is recommended that the Author start with gathering criteria and information from the community for complicated solutions. The Author is encouraged to poll the community at this point for the criteria that a good solution/proposal would fulfil, or to gather sentiment for the idea generally.
 
@@ -62,7 +62,7 @@ For complex decisions, it is recommended that the Author start with gathering cr
 
 Once you've allowed enough time for feedback and a properly formatted (see below section) draft MIP has been written, it should be submitted to the MIPs GitHub repository as a pull request, accompanied by a summary of the discussion so far in the comment section, with links where possible.
 
-A member of the MIP Working Group will assign a MIP number, select the appropriate MIP type (Standards, Informational, or Meta and begin the validation process)
+A member of the MIP Working Group will assign a MIP number, select the appropriate MIP type (Standards, Informational, or Meta) and begin the validation process.
 
 #### 3. Wait for approval and/or feedback from the MIP Editors
 
@@ -76,7 +76,7 @@ Responsible for vetting the idea, gathering sentiment, writing the MIP, champion
 
 #### MIP Editors
 
-The MIP Editors are here to ensure the MIP is complaint to the process at all times and that process is fluid and there is progression of MIPs through the process . If you have questions regarding the MIP process, they can point you in the right direction.
+The MIP Editors are here to ensure the MIP is complaint to the process at all times and that process is fluid and there is progression of MIPs through the process.  If you have questions regarding the MIP process, they can point you in the right direction.
 
 #### Dev Teams
 
@@ -98,7 +98,7 @@ Each should have the following parts:
 
 **Specification** - The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations for any of the current Mina implementations.
 
-**Rationale** - The rationale fleshes out the specification by describing what motivated the design and why particular design decisions were made. It should describe alternate designs that were considered and related work, e.g. how the feature is supported in other languages. The rationale may also provide evidence of consensus within the community, and should discuss important objections or concerns raised during discussion.
+**Rationale** - The rationale fleshes out the specification by describing what motivated the design and why particular design decisions were made. It should describe alternate designs that were considered and related work, e.g. how the feature is supported in other systems. The rationale may also provide evidence of consensus within the community, and should discuss important objections or concerns raised during discussion.
 
 **Backwards Compatibility** - All MIP that introduce backwards incompatibilities must include a section describing these incompatibilities and their severity.
 
