@@ -10,7 +10,7 @@ The Mina Foundation intends MIPs to be the primary mechanism for proposing new f
 
 ## The MIP Process
 
-This document is not intended to be the end state process for MIPs, but rahter servers as a draft proposal to encourage discussion and feedback from commnuity and all stakeholders. The process will be evaluated and adapted on a regular basis, based on participant feedback and robustly testing in beta mode by running a series of decisions through the process.
+This document is not intended to be the end state process for MIPs, but rather serves as a draft proposal to encourage discussion and feedback from commnuity and all stakeholders. The process will be evaluated and adapted on a regular basis, based on participant feedback and robustly testing in beta mode by running a series of decisions through the process.
 
 The process described here is inspired by the long track record in this area by other projects, particurlarly Bitcoin and Ethereum.
 
@@ -183,3 +183,4 @@ The created header records the date that the MIP was assigned a number. Both hea
 
 `requires header`
 MIPs may have a requires header, indicating the MIP numbers that this MIP depends on.
+---
