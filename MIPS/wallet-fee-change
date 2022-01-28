@@ -1,0 +1,63 @@
+---
+eip: <to be assigned>
+title: <Reduce Mina Wallet Creation Fee>
+description: <The Proposal is to reduce the wallet creation for from 1Mina to .25Mina at the next hard fork on condition that a permanent solution is worked on.>
+author: <Peter Greystoke with help from Trivo <info@minacrypto.com>>
+discussions-to: <https://forums.minaprotocol.com/t/do-you-think-there-should-be-a-fixed-price-to-set-up-a-mina-wallet/4507/32>
+status: Draft
+type: <Standards Track>
+category (*only required for Standards Track): <Core>
+created: <2021-12-20>
+requires (*optional): <EIP number(s)>
+---
+
+MIP Template
+This is the suggested template for new MIPs.
+
+Note that an EIP number will be assigned by an editor. When opening a pull request to submit your EIP, please use an abbreviated title in the filename, `wallet-fee-change.md`.
+
+The title should be 44 characters or less. It should not repeat the MIP number in title, irrespective of the category.
+
+## Abstract
+
+Reduce new wallet creation fee from 1mina to .25mina with a caveat to investigating a permenant solution through MinaResearch. 
+
+## Motivation
+
+The current 1 mina creaiton fee while still relatively small is a barrier for smaller investors. Should the price of Mina rise this will only become more so. With the prevalance of so many other coins, especially in the ZK space that don't have this fee, it may be that Mina Protocol loses out on early investors loyalty. This has additional consequences for community traction and wider interest and developer engagement. 
+
+## Specification
+
+***** HELP NEEDED TO COMPLETE THIS PART ****** 
+
+The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in RFC 2119.
+
+*********************
+
+## Rationale
+
+As a member with access to large numbers of the Mina Community I am aware that the high wallet creation fee is the biggest cause for negative discussion. By reducing the fee we are also signalling we can adapt and change to community concerns in a way that will benefit the project too. From discussion on MinaResearch and various polls see https://twitter.com/minacryptocom/status/1469249478897156109  83.6% for 16.4 % against 183 votes and https://twitter.com/minacryptocom/status/1477933982708867075?t=ahW9qaF1gAd3mMP3PKXpfA&s=19 79.5% yes 18.9% against 302 votes and https://forums.minaprotocol.com/t/do-you-think-there-should-be-a-fixed-price-to-set-up-a-mina-wallet/4507/30?u=pete 80% for / 20% against 20 votes it is felt the proposal is strongly supported in the Community. 
+
+## Backwards Compatibility
+
+There should be no issues with Backwards Compatibility since the change is only a configuration update. 
+
+
+## Test Cases
+
+Not applicable - Account creation should already be covered by internal tests
+
+
+## Reference Implementation
+
+Not applicable - Reference Implementation is a configuration update. 
+
+
+## Security Considerations
+
+Lowering the fee down to 0.25 MINA allows not only for users to create addresses easier, but also for malicious actors. A malicious actor could, if the wallet creation fee was low enough, theoretically pollute the ledger with accounts. However, considering the current Dollar-value of Mina at the time of this post, a malicious actor would still need to raise ~$0.9 in order to create an address - therefore a lot of resources would still be needed in order to execute such an attack. Additionally, the ledger is currently of size 2^20, roughly 1,050,000, so with 0.25 MINA wallet creation fee, polluting the ledger would still be a massive hurdle for potential malicious actors. Therefore, we dont forsee any security concerns with lowering the wallet creation fee. 
+
+
+## Copyright
+
+Copyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
