@@ -184,3 +184,11 @@ The created header records the date that the MIP was assigned a number. Both hea
 `requires header`
 MIPs may have a requires header, indicating the MIP numbers that this MIP depends on.
 ---
+
+## History
+
+This document was derived heavily from [Ethereum's EIP-1](https://github.com/ethereum/EIPs) written by Martin Becze and Hudson Jameson, which was derived from [Bitcoin's BIP-0001](https://github.com/bitcoin/bips) written by Amir Taaki, which in turn was derived from [Python's PEP-0001](https://www.python.org/dev/peps/). In many places text was simply copied and modified. The authors of the previous texts on which this process is based are not responsible for the Mina Improvement Process and should not be bothered with questions. Please direct all comments to the MIP editors. This History section was derived from [Filecoins's FIP-1](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0001.md)
+
+## Copyright
+
+Copyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
