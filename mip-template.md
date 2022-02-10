@@ -52,6 +52,10 @@ An optional section that contains a reference/example implementation that people
 
 All MIPs must contain a section that discusses the security implications/considerations relevant to the proposed change. Include information that might be important for security discussions, surfaces risks and can be used throughout the life cycle of the proposal. E.g. include security-relevant design decisions, concerns, important discussions, implementation-specific guidance and pitfalls, an outline of threats and risks and how they are being addressed. MIP submissions missing the "Security Considerations" section will be rejected. An MIP cannot proceed to status "Final" without a Security Considerations discussion deemed sufficient by the reviewers.
 
+## History
+
+This document was derived heavily from [Ethereum's EIP-1](https://github.com/ethereum/EIPs) written by Martin Becze and Hudson Jameson, which was derived from [Bitcoin's BIP-0001](https://github.com/bitcoin/bips) written by Amir Taaki, which in turn was derived from [Python's PEP-0001](https://www.python.org/dev/peps/). In many places text was simply copied and modified. The authors of the previous texts on which this process is based are not responsible for the Mina Improvement Process and should not be bothered with questions. Please direct all comments to the MIP editors. This History section was derived from [Filecoins's FIP-1](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0001.md)
+
 ## Copyright
 
 Copyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
