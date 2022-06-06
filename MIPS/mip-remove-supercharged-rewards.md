@@ -57,6 +57,7 @@ This yields the following table for early, and recent epochs, indicating the low
 | 26    | 778,531,646  | 903,107,270    | 86.2%        |
 | 27    | 771,969,445  | 907,075,394    | 85.1%        |
 | 28    | 786,008,121  | 911,356,192    | 86.2%        |
+| 29    | 789,301,700  | 915,528,336    | 86.2%        |
 
 TODO: can we compare that across other POS networks?
 
