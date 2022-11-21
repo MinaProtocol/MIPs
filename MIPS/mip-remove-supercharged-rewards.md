@@ -22,7 +22,7 @@ Supercharged rewards were introduced to provide additional incentives to stake d
 
 The supercharged block reward rate of Mina was planned to follow a step-wise schedule, with changes made at hard forks. However, no hard forks have been completed to this point, so supercharged rewards have only [declined relative to the increase in total currency](https://minaprotocol.com/blog/update-on-minas-supercharged-rewards-schedule). This is demonstrated by the following chart showing the actual annualized expected protocol returns for supercharged rewards, the planned return for supercharged rewards, and the vesting tokens (locked) expected returns.
 
-![Supercharged Yields](https://storage.googleapis.com/mina-explorer-data/supercharged_yields_updated.png)
+![Supercharged Yields](https://storage.googleapis.com/mina-explorer-data/supercharged_yields_epoch40.png)
 
 Supercharged rewards are implemented via a constant `supercharged_coinbase_factor`, which is currently `2` such that the coinbase rewards for supercharged rewards are always twice the coinbase for locked tokens (720 1440 respectively). Once this MIP is implemented, the return for locked and unlocked tokens will be the same. Without this MIP, supercharged rewards will continue to accrue to unlocked token holders, thereby increasing the planned inflation rate of the network relative to that initially proposed.
 
