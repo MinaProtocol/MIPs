@@ -65,7 +65,7 @@ Supercharged rewards, as implemented by the `supercharged_coinbase_factor` MUST 
 
 ## Rationale
 
-As outlined in the [Motivation](#motivation) section, a step change to reduce and eventually remove supercharged rewards over the first 15 months was proposed but never implemented. As the first hard fork will be (well) past the 15-month date, this MIP simply implements removing them at the time of the first hard fork. The current staking participation rate is currently high, so there is unlikely a need to continue to additionally incentivize stakers with unlocked tokens at the cost of an increased inflation rate.
+As outlined in the [Motivation](#motivation) section, a step change to reduce and eventually remove supercharged rewards over the first 15 months was proposed but never implemented. As the first hard fork will be (well) past the 15-month date, this MIP simply implements removing them at the time of the first hard fork. The staking participation rate is currently high, so there is unlikely a need to continue to additionally incentivize stakers with unlocked tokens at the cost of an increased inflation rate.
 
 ## Backwards Compatibility
 
