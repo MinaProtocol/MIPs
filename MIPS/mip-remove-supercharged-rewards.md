@@ -24,7 +24,7 @@ The supercharged block reward rate of Mina was planned to follow a step-wise sch
 
 ![Supercharged Yields](https://storage.googleapis.com/mina-explorer-data/supercharged_yields_epoch40.png)
 
-Supercharged rewards are implemented via a constant `supercharged_coinbase_factor`, which is currently `2` such that the coinbase rewards for supercharged rewards are always twice the coinbase for locked tokens (720 & 1440 respectively). Once this MIP is implemented, the return for locked and unlocked tokens will be the same. Without this MIP, supercharged rewards will continue to accrue to unlocked token holders, thereby increasing the planned inflation rate of the network relative to that initially proposed.
+Supercharged rewards [are implemented](https://github.com/MinaProtocol/mina/pull/5867) via a constant `supercharged_coinbase_factor`, which is currently `2` such that the coinbase rewards for supercharged rewards are always twice the coinbase for locked tokens (720 & 1440 respectively). Once this MIP is implemented, the return for locked and unlocked tokens will be the same. Without this MIP, supercharged rewards will continue to accrue to unlocked token holders, thereby increasing the planned inflation rate of the network relative to that initially proposed.
 
 Supercharged rewards were proposed to incentivize staking. Mina's block production is probabilistic, so we cannot precisely know the staking participation rate. However, we can determine the lower bound based on actual blocks produced for slots won and the amount of stake delegated. For example, using the public BigQuery archive data source for epoch 40 we can determine the amount of stake delegated that won a slot and produced a block (802,958,437).
 
@@ -70,10 +70,6 @@ As outlined in the [Motivation](#motivation) section, a step change to reduce an
 ## Backwards Compatibility
 
 This MIP is not backward compatible as it is a change to the consensus rules and requires a hard fork to implement.
-
-## Reference Implementation
-
-Needs input: Supercharged rewards were implemented in [PR #5876](https://github.com/MinaProtocol/mina/pull/5867). There are merge conflicts with simply reverting this commit.
 
 ## Security Considerations
 
