@@ -1,5 +1,5 @@
 ---
-mip: <to be assigned>
+mip: 0001
 title: Remove supercharged rewards
 description: This MIP removes the short-term incentive of supercharged rewards
 author: Gareth Davies (@garethtdavies)
