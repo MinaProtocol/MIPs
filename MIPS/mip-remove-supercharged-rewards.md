@@ -4,7 +4,7 @@ title: Remove supercharged rewards
 description: This MIP removes the short-term incentive of supercharged rewards
 author: Gareth Davies (@garethtdavies)
 discussions-to: https://forums.minaprotocol.com/t/reduce-supercharged-rewards-in-line-with-initial-tokenomics/4540
-status: Last Call
+status: Finallize
 type: Standards Track
 category: Core
 created: 2022-06-01
