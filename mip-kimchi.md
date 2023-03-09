@@ -3,7 +3,7 @@ mip: <to be assigned>
 title: Kimchi, a new proof system
 description: Kimchi is an update to the proof system currently used by Mina
 author: David Wong (@mimoo), Matthew Ryan (@mrmr1993), Joseph Spadavecchia (@jspada), Anaïs Querol (@querolita)
-discussions-to: https://github.com/MinaProtocol/MIPs/pull/9
+discussions-to: https://forums.minaprotocol.com/t/kimchi-mip-a-proposed-upgrade-to-minas-proof-system/6004
 status: Draft
 type: Standards Track
 category (*only required for Standards Track): Cryptography
