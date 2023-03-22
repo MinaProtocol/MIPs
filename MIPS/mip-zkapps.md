@@ -32,7 +32,7 @@ the following characteristics while preserving the succinctness of Mina:
   their state can be programmed by their developers
 
   **Constant in verification time** - individual transactions are executed, or
-  more accurately “proven” asynchronously off-chain and verified on-chain in
+  more accurately “proven”, asynchronously off-chain and verified on-chain in
   time proportional to the account updates, independent of computational
   complexity of any individual proof inside of each account update
 
@@ -73,12 +73,15 @@ typical Mina account that supports payments.
 - `zkapp_version` : a nonnegative integer, the zkApps version that determined
 the `app_state`
 - `action_state` : an array of five field elements, each representing an
-"action" (see below) contained in a zkApp
+"action" contained in a zkApp. For details, see [actions](#actions).
+
 - `last_action_slot` : the global slot when the `action_state` was last updated
 - `proved_state` : a boolean, whether the application state was set from a
 proof-driven zkapp transaction.
 - `zkapp_uri` : a string, of max size=255, either empty, or denoting a URI that
 contains information about the zkApp
+
+#### Actions
 
 An "action" is a list of special "events" that is an array of field elements
 representing information chosen by a zkApp developer. See the published
@@ -111,13 +114,12 @@ The other account updates contain more information:
 - `update` : a specification of how the account must be updated
 - `balance_change` : a signed quantity, how much this account's balance will
 change
-- `increment_nonce` : a boolean, whether this account's nonce will increment
+- `increment_nonce` : a boolean, whether to increment this account's nonce
 - `events` : an array of field elements the zkApp can choose to provide
-- `actions` : a list of events the zkApp can choose to provide (see above re
-`sequence_state` for a primer on actions)
+- `actions` : a list of events the zkApp can choose to provide, see `sequence_state` in [Actions](#Actions) for a primer on actions
 - `call_data` : a hash used when composing zkApps
 - `call_depth` : a nonnegative integer, used to establish parent/child
-relationships between account updates (see more information on tokens)
+relationships between account updates. For more information on tokens, see [Token Mechanics](#token-mechanics).
 - `preconditions` : preconditions that must hold for the account update to
 succeed
 - `use_full_commitment` : whether to include hashes of the fee payer and memo in
@@ -125,7 +127,7 @@ the commitment for a signature authorization
 - `implicit_account_creation_fee` : a boolean, whether to pay an account
 creation fee from the `balance_change`; otherwise, the fee is taken from the
 "fee excess" across all account updates
-- `may_use_token` : See below for an explanation of this field's semantics
+- `may_use_token` : See [Token Mechanics](#token-mechanics) for an explanation of this field's semantics
 alongside other information about tokens
 
 If the authorization is a proof, the account update contains a hash of the
@@ -172,7 +174,7 @@ like liquidity tokens in a DEX.
 Note that this structure enables extremely powerful usages of tokens. The entire
 Mina ecosystem benefits with a collective agreement to agree on more restrictive
 token standards built on top of these systems such that groups of contracts can
-compose with one-another more easily.
+compose with one another more easily.
 
 #### Call Forest Encoding
 
@@ -211,7 +213,7 @@ Those fields are:
 - `timing`
 - `voting_for`
 
-Note that some of these items are not in the in the `zkapp` part of an account
+Note that some of these items are not in the `zkapp` part of an account
 (for example, the `delegate` field). A given account update can request to
 update some or all of these items.
 
@@ -271,7 +273,7 @@ state.
 The initial implementation proposes that network preconditions are to be true at
 the moment the transaction is included in a block, otherwise the transaction
 fails. This failure is known to be a bit frustrating as many of the network
-preconditions . In a future hardfork, there will likely be changes to allow
+preconditions. In a future hardfork, there will likely be changes to allow
 network preconditions to be true in a range of slots/blocks rather than the
 exact one where the transaction is added.
 
@@ -311,7 +313,7 @@ and child, respectively.  If these account updates succeed, a new
 account is created with a balance of 100 in the custom token.
 
 An account update using a custom token requires permission to use
-that token. In this example, the parent account is the the account id
+that token. In this example, the parent account is the account id
 given by the public key `token_owner` and the token `default_token`;
 that account id owns `custom_token`. The permission
 `Parents_own_token` allows the new account to receive the minted
@@ -378,7 +380,7 @@ the permission, or the proof or signature authorization does not
 verify.
 
 The `access` permission introduced here affects not only zkApps, but
-also the payment and delegation transactions in the existing mainnet.
+also the payment and delegation transactions in the existing Mainnet.
 For those transactions, the fee payer and source accounts (that are
 always the same accounts, in any case) need to have an `access`
 permission compatible with a signature authorization.
@@ -389,8 +391,8 @@ permission compatible with a signature authorization.
 
 A user can create a zkApp transaction using SnarkyJS or other tooling, and sign
 it with a wallet key. The daemon provides a GraphQL endpoint to accept the
-zkApp. If the zkApp has a sufficient fee and passes validity checks (see below),
-it's queued to the transaction pool for broadcast to the network.
+zkApp. If the zkApp has a sufficient fee and passes validity checks,
+it's queued to the [transaction pool](#transaction-pool) for broadcast to the network.
 
 #### Fees and queueing
 
@@ -462,8 +464,7 @@ before the changes proposed in this document.
 
 Proofs inside of account updates are checked when zkApp transactions are
 added to the transaction pool against some known potential future verification
-key (see the "Mitigation of Attack 2: Verification Key Superposition" section
-for more details). When a block is created, the proofs are not re-checked
+key as described in [Mitigation of Attack 2: Verification Key Superposition](#mitigation-of-attack-2-verification-key-superposition). When a block is created, the proofs are not re-checked
 because they were already checked when added to the pool. When a block is
 received, all checks required to verify that the sender hasn't manipulated the
 payload are re-verified, but the proof is not explicitly checked in all cases.
@@ -495,7 +496,7 @@ are snarked, there is a new snarked ledger everytime a sequence of transactions
 is fully snarked and this state is updated in the protocol state. With the two-
 pass application model there are two ledger states that correspond to a scan
 state tree-first pass ledger and second pass ledger. When there are transactions
-from a block overflowing to a new scan state tree (as shown below), the second
+from a block overflowing to a new scan state tree as shown in the following diagram, the second
 pass ledger of the first tree is assumed to be true provided ledger state after
 applying the remainder of the block's transaction in the second tree are true.
 Due to this impending assumption that is validated only in the SNARK proof of
@@ -504,7 +505,7 @@ snarked ledger everywhere else in the protocol.
 
 
 Having first-pass ledger as snarked ledger means that a snarked ledger can
-correspond to a set of transactions that aren't fully applied and/or it may
+correspond to a set of transactions that aren't fully applied and/or it can
 include transactions that were applied partially (first-pass) in the previous
 snarked ledger and fully applied (first-pass and second-pass) in the current
 one.
@@ -525,7 +526,7 @@ snarked ledger by applying first pass of `T12`, `T13` and then second pass of
 
 Snarked ledgers are used as epoch ledgers or staking ledgers for vrf
 evaluations. These now are first-pass ledgers as described
-[above](#snarked-ledger).
+ in [Snarked Ledger](#snarked-ledger).
 
 #### Bootstrap
 
@@ -606,13 +607,13 @@ limits on other parts of a transaction: The memo has a fixed size and events
 and actions are capped to enforce that the network doesn't need to do too much
 work to process a transaction.
 
-## Backwards Compatibility
+## Backward Compatibility
 
-This MIP is not backwards-compatible; it is an extensive change to the
+This MIP is not backward compatible; it is an extensive change to the
 consensus rules and requires a hard fork to implement. Nonetheless,
 processing of payments and delegations has not changed.
 
-Backwards compatibility for zkApps is an important consideration for future
+Backward compatibility for zkApps is an important consideration for future
 hardforks but has been deemed out of scope for this hardfork, and, moreover,
 those proposing to upgrade to any part of zkApps at a later time are in a better
 position to make concrete suggestions.
@@ -681,7 +682,7 @@ producers
 the fee!
 
 Such processes can be repeated to completely fill the mempool with "broken"
-transacitons such that honest transactions cannot be processed; the economic
+transactions such that honest transactions cannot be processed; the economic
 incentives for filling the mempool are bypassed.
 
 #### Mitigation of Attack 1: Two-phase Transaction Application
@@ -692,7 +693,7 @@ every transaction in the mempool can always be applied in the next block under
 any circumstance.
 
 How? Introduce two-phase transaction application (as described in earlier
-sections). zkApp transactions are applied in the folowing manner: First fees are
+sections). zkApp transactions are applied in the following manner: First, fees are
 payed for all transactions in the block, then the other account updates are
 applied in sequence (and may optionally fail).
 
@@ -720,7 +721,7 @@ accepted to the mempool)
 step1)
 3. A transaction that updates the verification key to `vk1` is enqueued,
 followed by many zkapp transactions with proofs verifying against `vk0`. These
-transactions will be invalid after the the verification key is updated to `vk1`
+transactions will be invalid after the verification key is updated to `vk1`
 however, they get accepted into the pool because they are verified against the
 key in the best tip ledger `vk0`. (Proofs in the same transaction against `vk1`
 will succeed)
@@ -770,8 +771,8 @@ testing.
 
 Test transaction application for zkApp transactions performing all possible
 account updates, with and without permission for each update. Unless the fee
-payer permission is invalid, all transactions whether or not are permitted to
-make an update should be included in a block. This is to prevent transaction
+payer permission is invalid, all transactions whether permitted to
+make an update or not, are included in a block. This is to prevent transaction
 pool DDOS attack. For each of these cases, test both in-snark and out-of-snark
 logic.
 
@@ -878,8 +879,7 @@ Goals of this effort were to define the minimal scope of realistic
 applications that exercised all parts of the zkApps logic such that:
 
 1. With very high confidence, it is believed that funds won't be at risk from
-any bugs (see application 2 for complex token interactions that stress test
-this).
+any bugs. See [Application 2: DEX](#application-2-dex) for complex token interactions that stress test this.
 
 2. With medium confidence, we believe that all features work as expected.
 
@@ -890,7 +890,7 @@ features within zkApps.
 
 We constructed an app that allows voters to choose candidates within a
 certain time period. The app supports more than eight candidates as to
-warrant the use of off-chain merkle tree. It also uses another app that keeps
+warrant the use of off-chain Merkle trees. It also uses another app that keeps
 track of voters, number of votes per voter, and whether or not they are
 qualified to vote.
 
@@ -903,7 +903,7 @@ list public in the form of events
 transactions and stores in its state
 * The election commission can use the zkapp to generate transactions that
 commits to the latest vote count (what it has recorded so far)
-* After the voting window closes, the election commision can commit to the final
+* After the voting window closes, the election commission can commit to the final
 vote count.
 * The "count votes" method can be called at any moment
 
@@ -914,7 +914,7 @@ Components of the zkCPU tested:
 * Account + Network Preconditions
 * Live upgrading of contract mid-transaction
 * Permissions
-* State overflows (use merkle trees)
+* State overflows (use Merkle trees)
 
 [Source code](https://github.com/o1-labs/snarkyjs/tree/main/src/examples/zkapps/voting)
 
