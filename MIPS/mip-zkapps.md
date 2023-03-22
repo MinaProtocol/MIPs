@@ -52,7 +52,7 @@ To accommodate zkApps, Mina ledger accounts have the following new field:
 - `token_symbol`: a string, up to six characters long, that can provide a name
      for a `token_id` whose owner is the public key and token id in this
      account. In the existing mainnet, only the default MINA `token_id` is
-     used. New `token_id`s are derived from the the addresses of the
+     used. New `token_id`s are derived from the addresses of the
      smart contract that defines them.
 
 The following account field is removed:
