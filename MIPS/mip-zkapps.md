@@ -57,8 +57,8 @@ To accommodate zkApps, Mina ledger accounts have the following new field:
 
 The following account field is removed:
 
-- `token_permissions`: this field was meant for non-default tokens that were
-never introduced
+- `token_permissions`: this field was meant for an older design of non-default
+tokens that has now been changed.
 
 The `snapp` field in accounts was never instantiated and is
 replaced by the `zkapp` field.
@@ -237,7 +237,7 @@ The account preconditions are:
 - `receipt_chain_hash` : a specific receipt chain hash
 - `delegate` : a specific public key
 - `state` : a specific application state
-- `sequence_state` : a specific sequence state
+- `action_state` : the root of the actions merkle list for this account
 - `proved_state` : a specific proved state
 - `is_new` : whether the account is new
 
@@ -413,7 +413,8 @@ contained in them, subject to a grouping used to minimize the number
 of SNARKs needed to prove the transaction. That grouping sometimes
 pairs signatures as one element contributing to the cost.  The number
 of proofs, signatures, and signature pairs are multiplied by factors
-determined empirically to yield a valid cost metric.
+determined empirically to yield a valid cost metric. These limits will be
+tuned during the incentivized testnet.
 
 The transaction pool maintains a queue of pending transactions for each
 fee payer, and checks the applicability of transactions considering nonces
@@ -588,7 +589,7 @@ updates with proofs are more expensive than account updates with signatures or
 no authorization. Because the transaction application logic circuit will
 increase, more memory is required to create transaction proofs. This MIP
 requires that Snark Workers utilize more compute and memory than they had before
-this change.
+this change. TODO: Find how much more?
 
 #### Memory impact
 
@@ -598,6 +599,7 @@ subsystems. Blocks will be larger because transactions can be larger. The
 mempool can be tweaked to store fewer max transactions at a time, but other
 components that store blocks must expand in size. This has some effect on
 memory, but initial prototypes confirm node requirements remain reasonable.
+TODO: Find how much is reasonable?
 
 #### Limiting zkApp transaction size
 
