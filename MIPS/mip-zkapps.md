@@ -413,8 +413,19 @@ contained in them, subject to a grouping used to minimize the number
 of SNARKs needed to prove the transaction. That grouping sometimes
 pairs signatures as one element contributing to the cost.  The number
 of proofs, signatures, and signature pairs are multiplied by factors
-determined empirically to yield a valid cost metric. These limits will be
-tuned during the incentivized testnet.
+determined empirically to yield a valid cost metric. These limits are subject to
+be tuned during the incentivized testnet if this MIP passes, but in the
+prototype are set to any set of account updates that satisfies this equation:
+
+```
+  np := proof account updates
+  n2 := signedPair account updates
+  n1 := signedSingle account updates
+  
+  formula used to calculate how expensive a zkapp transaction is
+  10.26*np + 10.08*n2 + 9.14*n1 < 69.45
+```
+
 
 The transaction pool maintains a queue of pending transactions for each
 fee payer, and checks the applicability of transactions considering nonces
@@ -589,7 +600,8 @@ updates with proofs are more expensive than account updates with signatures or
 no authorization. Because the transaction application logic circuit will
 increase, more memory is required to create transaction proofs. This MIP
 requires that Snark Workers utilize more compute and memory than they had before
-this change. TODO: Find how much more?
+this change. Initial testing approximates an 8-fold increase in compute and an
+80% increase in memory requirements for snark workers.
 
 #### Memory impact
 
@@ -597,9 +609,8 @@ In addition to the impact to Snark Workers, all participating nodes in the
 network must now store larger transactions through different
 subsystems. Blocks will be larger because transactions can be larger. The
 mempool can be tweaked to store fewer max transactions at a time, but other
-components that store blocks must expand in size. This has some effect on
-memory, but initial prototypes confirm node requirements remain reasonable.
-TODO: Find how much is reasonable?
+components that store blocks must expand in size. Initial testing approximates
+only a 20% increase in max memory consumption for block producers for example.
 
 #### Limiting zkApp transaction size
 
@@ -609,16 +620,22 @@ limits on other parts of a transaction: The memo has a fixed size and events
 and actions are capped to enforce that the network doesn't need to do too much
 work to process a transaction.
 
-## Backward Compatibility
+## Backward (and Forward) Compatibility
 
-This MIP is not backward compatible; it is an extensive change to the
-consensus rules and requires a hard fork to implement. Nonetheless,
-processing of payments and delegations has not changed.
+Payment and delegation transaction processing remains unchanged, and thus
+existing infrastructure and tooling will remain compatible -- so in some sense
+the introduction of zkApp transactions is backward compatible.
 
-Backward compatibility for zkApps is an important consideration for future
+However, this MIP requires a hardfork as there are extensive changes to the
+consensus rules.
+
+Forward compatibility for zkApps is an important consideration for future
 hardforks but has been deemed out of scope for this hardfork, and, moreover,
 those proposing to upgrade to any part of zkApps at a later time are in a better
 position to make concrete suggestions.
+
+It is recommended that early developers of zkApps prepare for required smart
+contract upgrades just in case.
 
 To assuage concerns that compatibility are impossible: If it is deemed important
 to maintain compatibility on an upgrade, upgrades of the transaction structure,
