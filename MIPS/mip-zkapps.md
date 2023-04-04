@@ -1,10 +1,10 @@
 ---
-mip: 0002
+mip: MIP4
 title: Add zkApps to the protocol
 description: This Mina Improvement Proposal (MIP) adds programmable smart contracts (zkApps) to the Mina protocol
 authors: Deepthi Kumar (deepthiskumar), Paul Steckler (@psteckler), Brett Carter (@carterbrett), Brandon Kase (@bkase)
 discussions-to: https://forums.minaprotocol.com/t/zkapps-protocol-mip-adding-zk-programmability-to-mina/6021
-status: Draft
+status: Review
 type: Standards Track
 category: Core
 created: 2023-02-14
