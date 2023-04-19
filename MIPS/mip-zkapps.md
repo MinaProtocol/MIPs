@@ -70,8 +70,10 @@ associated with the account
 - `verification_key` : an optional key to use when verifying transaction
 SNARKs for zkApps using this account; when not provided, the account is a
 typical Mina account that supports payments.
-- `zkapp_version` : a nonnegative integer, the zkApps version that determined
-the `app_state`
+- `zkapp_version` : a nonnegative integer that determines
+the protocol and proof system version deployed zkApps are compatible with. Set
+for new accounts and zkApp upgrades due to protocol and/or proof-system
+upgrades.
 - `action_state` : an array of five field elements, each representing an
 "action" contained in a zkApp. For details, see [actions](#actions).
 
