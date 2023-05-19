@@ -245,8 +245,10 @@ The account preconditions are:
 
 An account update can include some or all of these
 preconditions. These preconditions are checked against the account
-from the previous protocol state. These conditions must be true at the
-moment the transaction is included in a block, otherwise the
+from the local state ledgers, both first pass and second pass ledgers
+(see [two pass system](#two-pass-system)) that is up-to-date with all the
+transactions included in the current block so far. These conditions must be
+true at the moment the transaction is included in a block, otherwise the
 transaction fails.
 
 The network preconditions are:
