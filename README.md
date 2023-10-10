@@ -114,13 +114,13 @@ Copyright Waiver - All MIPs must be in the public domain.
 
 ## MIP Formats and Templates
 
-MIPs should be written in markdown format.
+MIPs should be written in markdown format. The filename of a MIP should follow `mip-<number>-<feature-name>.md` naming convention where \<number\> is the MIP number in a 4-digit format (left-padded with 0) and \<feature-name\> is hyphen-separated name of the title or major feature of the MIP.
 
 ## MIP Header Preamble
 
 Each MIP must begin with an RFC 822 style header preamble, preceded and followed by three hyphens (---). This header is also termed “front matter” by Jekyll. The headers must appear in the following order.
 
-mip: MIP number (this is determined by the MIP editor)
+`mip`: MIP number (this is determined by the MIP editor)
 
 `title`: The MIP title is a few words, not a complete sentence
 
