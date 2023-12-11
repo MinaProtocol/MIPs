@@ -224,7 +224,7 @@ The complete reference implementation is contained in the repository https://git
 
 ## Security Considerations
 
-All MIPs must contain a section that discusses the security implications/considerations relevant to the proposed change. Include information that might be important for security discussions, surfaces risks and can be used throughout the life cycle of the proposal. E.g. include security-relevant design decisions, concerns, important discussions, implementation-specific guidance and pitfalls, an outline of threats and risks and how they are being addressed. MIP submissions missing the "Security Considerations" section will be rejected. An MIP cannot proceed to status "Final" without a Security Considerations discussion deemed sufficient by the reviewers.
+> TODO: Discuss security of fungible tokens. Include pitfalls in implemting the interfaces (such as missing check that balance is preserved), as well as potential for fraud (such as defining a token that tries to mimick another token).
 
 ## Copyright
 
