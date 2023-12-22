@@ -220,7 +220,7 @@ The below reference implementation contains a test suite.
 
 ## Reference Implementation
 
-The complete reference implementation is contained in the repository https://github.com/stove-labs/mip-token-standard
+The complete reference implementation is contained in the repository https://github.com/MinaFoundation/mip-token-standard
 
 ## Security Considerations
 
