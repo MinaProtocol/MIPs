@@ -88,8 +88,8 @@ contains information about the zkApp
 An "action" is a list of special "events" that is an array of field elements
 representing information chosen by a zkApp developer. See the published
 zkApps documentation on
-[events](https://docs.minaprotocol.com/zkapps/advanced-snarkyjs/events) and
-[actions](https://docs.minaprotocol.com/zkapps/advanced-snarkyjs/actions-and-reducer)
+[events](https://docs.minaprotocol.com/zkapps/o1js/events) and
+[actions](https://docs.minaprotocol.com/zkapps/o1js/actions-and-reducer)
 for more information on the mental model of these primitives and how they're
 used in practice.
 
