@@ -145,7 +145,7 @@ Functions:
 - Accept or reject a MIP submission based on the established approval criteria.
 - Accept or reject a status change request ensuring that each step of the process is completed correctly.
 - Schedule and facilitate meetings between MIP Author and MIP Review Group, and other stakeholders.
-- Produce and share meeting minutes under the Chatham House Rule, when necessary for security reasons.
+- Produce and share meeting minutes, and follow the Chatham House Rule when necessary for security reasons.
 - Identify key stakeholders affected by the MIP and invite them to review the proposal and provide feedback.
 - Coordinate communications with the Mina Foundation to raise community awareness and promote participation.
 
