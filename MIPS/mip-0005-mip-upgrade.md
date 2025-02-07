@@ -2,7 +2,7 @@
 mip: MIP5
 title: MIP upgrade
 description: This MIP adds several improvements to the MIP process
-authors: Joaquin López (@criptowaco) <joaquin.lopez@minaprotocol.com>
+authors: Joaquin López (@joaquin.lopez1) <joaquin.lopez@minafoundation.com>, Remigiusz Antczak (@remiantczak) <remigiusz.antczak@minafoundation.com>, Ben Koppelman (benk0543) <ben.koppelman@minafoundation.com>, Cristina Echeverry (@cristinaecheverry) <cristina.echeverry@minafoundation.com>, Evan Shapiro (@evan02048) <evan@minafoundation.com>
 discussions-to: https://forums.minaprotocol.com/t/upgrading-the-mip-process/6464 
 status: Review
 type: Meta
@@ -30,14 +30,14 @@ The plan is to incorporate community feedback on this document and propose these
 
 The Mina Improvement Proposal (MIP) process is the main mechanism for protocol decision making and documenting design decisions that have gone into Mina. The process provides a structured, transparent and participatory way for community members to propose, discuss and agree (or not) to implement these changes.
 
-The MIP process is inspired by the successful governance models of projects like Bitcoin and Ethereum. It’s also inspired by the [Swiss democratic system](https://www.eda.admin.ch/aboutswitzerland/en/home/politik-geschichte/politisches-system/direkte-demokratie.html), embracing the principles of decentralization and direct democracy. Like the Swiss model, which empowers citizens to propose and vote on initiatives, the MIP process allows community members to propose and vote on major changes to the Mina Protocol, this ensures that decision-making power is distributed and community-driven, fostering a robust and participatory ecosystem.
+The MIP process is inspired by the successful governance models of projects like Bitcoin and Ethereum. It’s also inspired by the [Swiss democratic system](https://www.eda.admin.ch/aboutswitzerland/en/home/politik-geschichte/politisches-system/direkte-demokratie.html), embracing the principles of decentralization and direct democracy. Like the Swiss model, which empowers citizens to propose and vote on initiatives, the MIP process allows community members to propose and vote on major changes to the Mina Protocol, this ensures that decision-making power is distributed and community-driven, fostering a robust and participatory governance model.
 
-Over the last few years, Mina’s ecosystem has grown substantially and an increasing number of companies and individuals are joining and contributing to the ecosystem. Consequently, there is also a rising need to develop Mina’s governance to support this growth and help to realize Mina’s vision of a future powered by participants so that its decision making processes remain effective and aligned with the wishes of the community.
+Over the last few years, Mina’s community has grown substantially and an increasing number of companies and individuals are joining and contributing to it. Consequently, there is also a rising need to further develop Mina’s governance to support this growth and help to realize Mina’s vision of a future powered by participants so that its decision-making processes remain effective and aligned with the wishes of the community.
 
 
 ## Rationale
 
-This challenge stems from the current MIP process, where authorship has been limited and relies on a few organizations and individuals perhaps due to the limited expertise in the community. The informal nature of the current process allows anyone to provide comments on GitHub but there is a lack of structured process for experts to review MIPs that could benefit the deliberation of other community members. For example, non-expert community members who vote on proposals often have to evaluate them without fully understanding the risks and benefits, increasing the likelihood of risky proposals passing with low participation.
+This challenge stems from the current MIP process, where authorship has been limited and relies on a few organizations and individuals perhaps due to the limited expertise in the community. The informal nature of the current process allows anyone to provide comments on GitHub but there is a lack of a structured process for experts to sufficiently review MIPs that could benefit the deliberation of other community members. For example, non-expert community members who vote on proposals often have to evaluate them without fully understanding the risks and benefits, increasing the likelihood of risky proposals passing with low participation.
 
 To address these challenges, we propose the following desired properties for MIP decision making:
 - **Informed and Engaged:** Community members, especially non-experts, should be able to understand the potential risks and benefits of a proposal. Additionally, there should be a high level of participation in deliberations, debates, and voting. 
@@ -53,13 +53,13 @@ To achieve these desired properties, we propose the following mechanisms before 
 
 **Potential Next Steps**
 
-In line with the vision outlined in the [Next Steps for Mina Protocol’s Governance blog post](https://minaprotocol.com/blog/next-steps-mina-protocol-governance), we anticipate that this MIP Upgrade represents only the beginning of an evolving governance structure. Below are potential next steps that could be proposed in future MIPs, refined through community feedback and direction. These ideas are shared here to provide a broader context for where this initiative could lead over time:
+In line with the vision outlined in the [Next Steps for Mina Protocol’s Governance blog post](https://minaprotocol.com/blog/next-steps-mina-protocol-governance), we anticipate that this MIP proposal represents only the beginning of an evolving governance structure. Below are potential next steps that could be proposed in future MIPs, refined through community feedback and direction. These ideas are shared here to provide a broader context for where this initiative could lead over time:
 
 - Risk-Based Participation Thresholds: Introduce minimum participation thresholds for high-risk or complex MIPs, ensuring robust community engagement and a higher level of scrutiny before implementation.
 - Automation of the Facilitator Role: As the system scales, the MIP Facilitator role could be partially or fully automated, reducing manual intervention and ensuring efficiency while maintaining transparency.
 - Randomized Reviewer Selection: MIP Reviewers could be randomly selected from a larger pool of qualified individuals to ensure fairness and distribute responsibilities more evenly across the community.
 - Enhanced Community Onboarding: Develop comprehensive information and onboarding materials to empower community members, providing them with the tools and knowledge needed to actively participate in governance processes.
-- On-Chain Implementation of Governance Processes: Transition governance operations to an on-chain system (after thorough testing), automating workflows to reduce dependency on the Mina Foundation and further decentralizing decision-making.
+- On-Chain Implementation of Governance Processes: Transition governance operations to an on-chain system (after thorough testing), automating workflows to reduce dependency and further decentralized decision-making.
 
 These next steps are not part of the immediate changes proposed in this MIP Upgrade but are shared here to give context to the overarching goals of scalability, decentralization, and inclusivity for Mina Protocol’s governance. Community feedback will play a pivotal role in shaping these potential directions as the governance framework evolves.
 
@@ -134,7 +134,7 @@ Functions:
 
 #### Introducing New Roles and Responsibilities:
 
-**MIP Facilitator:** Elected community members with a deep understanding of Mina Protocol’s governance to oversee that the MIP process is followed correctly.
+**MIP Facilitator:** Elected community members with a deep understanding of Mina Protocol’s governance to oversee and ensure that the MIP process is followed correctly.
 
 Responsibilities:
 - Ensure a smooth progression of MIPs through the process.
@@ -142,7 +142,7 @@ Responsibilities:
 - Assist and support MIP Authors as necessary.
 
 Functions:
-- Accept or reject a MIP submission based on the established approval criteria.
+- Accept or reject an MIP submission based on the established approval criteria.
 - Accept or reject a status change request ensuring that each step of the process is completed correctly.
 - Schedule and facilitate meetings between MIP Author and MIP Review Group, and other stakeholders.
 - Produce and share meeting minutes, and follow the Chatham House Rule when necessary for security reasons.
@@ -157,7 +157,7 @@ Responsibilities:
 
 Functions:
 - Identify risks, benefits and tradeoffs of the proposed changes.
-- Assess the risk of a MIP to the long-term health of the protocol.
+- Assess the risk of an MIP to the long-term health of the protocol.
 - Publish a Risk Assessment with a rationale.
 - Join the meetings scheduled by the MIP Facilitator.
 
@@ -305,7 +305,7 @@ This collaborative model, supported by the new MIP categories, enhances inclusiv
 
 ## Backward (and Forward) Compatibility
 
-No backwards incompatibilities derived from this proposal because this MIP doesn’t introduce changes to the protocol that need an update. 
+No backward incompatibilities are derived from this proposal because this MIP doesn’t introduce changes to the protocol that need an update. 
 
 To go back to the previous version of the MIP process: 
 
@@ -362,7 +362,7 @@ The Admins of the Mina Discord Server will create new private channels to coordi
 
 To ensure a structured and effective rollout of the proposed governance improvements, we propose the introduction of a group of initial reviewers that ensures that the review process can function immediately upon approval of this MIP, providing a bridge until the community has built sufficient capacity. These individuals will be listed within this MIP to provide a reliable starting point, ensuring that there is sufficient expertise to maintain the quality and integrity of the review process from the outset. By providing this initial foundation, we reduce the risk of delays or bottlenecks, reinforcing trust in the governance system and creating a strong starting point for future scalability.
 
-As a safeguard during this bootstrapping phase, the Mina Foundation will temporarily step in to fulfill the roles of MIP Facilitators and MIP Reviewers if needed. Working in collaboration with O(1) Labs and other Mina ecosystem members, the Foundation’s involvement ensures stability while processes are tested and community capacity is cultivated.
+As a safeguard during this bootstrapping phase, the Mina Foundation is readily available to temporarily step in to fulfill the roles of MIP Facilitators and MIP Reviewers if needed. Working in collaboration with o1Labs and other Mina ecosystem members, the Foundation’s involvement ensures stability while processes are tested and community capacity is cultivated.
 
 During this bootstrapping phase, the Mina Foundation will focus on:
 
@@ -419,7 +419,7 @@ The proposal addresses the potential lack of expertise by assigning MIP Facilita
 
 **Conflict of Interest between MIP Author and Reviewers**
 
-To prevent conflicts of interest, the proposal establishes separate roles for authors and reviewers. MIP Facilitators ensure that authors do not review their own proposals, promoting objectivity and impartiality in the evaluation process.
+To prevent conflicts of interest, the proposal establishes separate roles for authors and reviewers. MIP Facilitators ensure that authors do not review their own proposals, and to promote objectivity and impartiality in the evaluation process.
 
 **Managing capacity for MIP reviews**
 
@@ -432,4 +432,6 @@ The proposal ensures transparency by implementing clear rules and guidelines for
 
 ## Copyright
 
-Copyright and related rights waived via [CC0.](https://creativecommons.org/publicdomain/zero/1.0/)
+This document is published under the Creative Commons Attribution 4.0 International License (CC BY 4.0), which allows you to share, copy, modify, and redistribute the content in any medium or format, even for commercial purposes, as long as you provide appropriate credit to original author and indicate if any changes were made.
+
+If you choose to modify the content, please highlight the changes you’ve made. For more information about this license, please see the full terms at https://creativecommons.org/licenses/by/4.0/ 
