@@ -1,4 +1,14 @@
-# Slot reduction MIP
+---
+mip: MIP6
+title: Reduce slot time to 90s
+description: This MIP proposes to reduce the slot time in Mina's Ouroboros Samasika consensus protocol from 180 seconds to 90 seconds, enabling more frequent block creation and doubling network throughput while maintaining system stability.
+authors: George Agapov <george@o1labs.org>, Christian Despres <christian@o1labs.org>
+discussions-to: <to be provided> 
+status: Review
+type: Meta
+category: Engineering
+created: 2025-06-05
+---
 
 # Abstract
 
