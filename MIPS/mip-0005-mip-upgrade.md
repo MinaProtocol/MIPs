@@ -4,7 +4,7 @@ title: MIP upgrade
 description: This MIP adds several improvements to the MIP process
 authors: Joaquin López (@joaquin.lopez1) <joaquin.lopez@minafoundation.com>, Remigiusz Antczak (@remiantczak) <remigiusz.antczak@minafoundation.com>, Ben Koppelman (benk0543) <ben.koppelman@minafoundation.com>, Cristina Echeverry (@cristinaecheverry) <cristina.echeverry@minafoundation.com>, Evan Shapiro (@evan02048) <evan@minafoundation.com>
 discussions-to: https://forums.minaprotocol.com/t/upgrading-the-mip-process/6464 
-status: Review
+status: Inactive
 type: Meta
 category: Governance
 created: 2024-11-04
