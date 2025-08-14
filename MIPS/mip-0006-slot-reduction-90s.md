@@ -45,9 +45,9 @@ Following protocol modifications are required to implement this change:
 3. Update the account vesting schedule logic
     - As part of the Ledger Migration procedure (that will be executed by the Mina node as part of the upgrade), update vesting parameters for **actively vesting** accounts.
     - For the definition of **actively vesting** accounts and formulas for update of vesting parameters, see Appendix.
-4. Remove the zkapp soft limit configuration option
-    - Currently set to 24 by default
-    - Not constrained by the protocol, but will be removed completely
+4. Unset the zkapp soft limit configuration option by default
+   - Currently set to 24 by default
+   - Not constrained by the protocol, but will be unset by default to allow more zkApp transactions per block
 
 ## Prerequisites
 
@@ -85,7 +85,7 @@ Some security considerations include:
 
 Testing on various hardware configurations prior to implementation was a necessary step to ensure network stability at the new slot time.
 
-The removal of the zkapp soft limit configuration option will increase the RAM consumption of Mina nodes. However, recently implemented [RAM optimizations](https://github.com/MinaProtocol/mina/pull/16966) ensure that RAM usage after this removal remains well below the recommended [RAM specifications](https://docs.minaprotocol.com/berkeley-upgrade/requirements) for Mina node deployment.
+Unsetting the zkapp soft limit configuration option by default will increase the RAM consumption of Mina nodes. However, recently implemented [RAM optimizations](https://github.com/MinaProtocol/mina/pull/16966) ensure that RAM usage after this removal remains well below the recommended [RAM specifications](https://docs.minaprotocol.com/berkeley-upgrade/requirements) for Mina node deployment.
 
 # Test cases
 
