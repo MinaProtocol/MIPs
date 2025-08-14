@@ -12,11 +12,11 @@ created: 2025-06-05
 
 # Abstract
 
-Mina was the first succinct blockchain built entirely on zero-knowledge cryptography. We initially prioritized robust system functionality over performance to ensure Mina's reliability. With this protocol update, we're beginning a series of incremental performance enhancements that will bring Mina's finality and throughput in line with industry standards, while remaining fully committed to our original zero-knowledge vision.
+This MIP proposes reducing Mina's slot time from 180 seconds to 90 seconds, effectively doubling the network's block production frequency. The change requires updating the `block_window_duration_ms` constant to 90,000 milliseconds and adjusting the coinbase reward from 720 to 360 MINA to maintain consistent token emission rates.
 
-This MIP proposes to reduce the slot time in Mina's Ouroboros Samasika consensus protocol from the current 180 seconds (3 minutes) to 90 seconds (1.5 minutes). This change will allow for more frequent block creation while maintaining system stability and performance, made possible by recent improvements in block creation performance.
+Existing accounts with active vesting schedules will have their parameters automatically migrated during the hard fork to preserve real-world vesting timelines despite the change in slot duration. The zkApp soft limit configuration option will be unset by default, allowing blocks to contain more than the current default of 24 zkApp transactions.
 
-We aim to deliver this MIP with a protocol upgrade scheduled for the Fall 2025.
+Recent performance improvements have reduced maximum block production time from over 100 seconds to under 30 seconds, making this slot time reduction feasible without compromising network stability. The upgrade requires a hard fork and is planned for Fall 2025, with prerequisite SNARK worker optimizations delivered via soft fork beforehand.
 
 # Motivation
 
