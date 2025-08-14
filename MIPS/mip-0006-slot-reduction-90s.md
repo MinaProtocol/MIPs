@@ -176,7 +176,7 @@ hard fork occurring.
 An account with vesting parameters set is **actively vesting**, if (and only if) either holds:
 
 - `global_slot < cliff_time` (vesting hasn’t started yet)
-- `global_slot **≥** cliff_time ∧ vesting_increment > 0 ∧ vesting_iterations * vesting_period + cliff_time > global_slot` (some funds remain to be unlocked)
+- `global_slot ≥ cliff_time ∧ vesting_increment > 0 ∧ vesting_iterations * vesting_period + cliff_time > global_slot` (some funds remain to be unlocked)
 - where `vesting_iterations` is:
     - `(initial_minimum_balance - cliff_amount) / vesting_increment`, if `mod(initial_minimum_balance - cliff_amount, vesting_increment) = 0`
     - `div(initial_minimum_balance - cliff_amount + vesting_increment, vesting_increment)`, otherwise
@@ -186,7 +186,7 @@ For **actively vesting** accounts the following modifications will be applied as
 - If `global_slot < cliff_time`, then:
     - `cliff_time_new = global_slot + (cliff_time - global_slot) * 2`
     - `vesting_period_new = vesting_period * 2`
-- If `global_slot **≥** cliff_time`, then:
+- If `global_slot ≥ cliff_time`, then:
     - `initial_minimum_balance_new = initial_minimum_balance - cliff_amount - vesting_increment * div(global_slot - cliff_time, vesting_period)`
     - `cliff_time_new = global_slot + 2 * (vesting_period - mod(global_slot - cliff_time, vesting_period))`
     - `cliff_amount_new = vesting_increment`
