@@ -87,6 +87,18 @@ Testing on various hardware configurations prior to implementation was a necessa
 
 Unsetting the zkapp soft limit configuration option by default will increase the RAM consumption of Mina nodes. However, recently implemented [RAM optimizations](https://github.com/MinaProtocol/mina/pull/16966) ensure that RAM usage after this removal remains well below the recommended [RAM specifications](https://docs.minaprotocol.com/berkeley-upgrade/requirements) for Mina node deployment.
 
+## Epoch Transition Frequency
+
+The reduction in slot time will decrease the real-world duration of epochs while maintaining the same number of slots per epoch. Currently, with 7,140 slots per epoch at 180 seconds per slot, each epoch lasts 357 hours (approximately 14.9 days). With the new 90-second slot time, epochs will last 178.5 hours (approximately 7.4 days).
+
+Impact on Operations:
+
+- **Delegation timing**: The effective "cooling off" period for stake delegation changes will be halved in real-world time
+- **Automated systems**: Scripts and automated tools that operate on epoch boundaries will trigger twice as often, potentially requiring operational adjustments
+- **Block producer operations**: Any operational procedures tied to epoch transitions will occur approximately twice as frequently
+
+Block producers and stake pool operators should evaluate whether their current operational procedures need adjustment to accommodate the increased frequency of epoch transitions.
+
 # Test cases
 
 The following test cases are designed to validate the correctness of configuration changes and protocol behavior introduced in this MIP. These cases are implemented as part of our existing test framework, including both CI-based tests and cluster deployments. However, they can also be manually reproduced and verified without specialized tooling.
@@ -118,6 +130,15 @@ Accounts with vesting parameters that vest over a predictable timeline (e.g., se
 
 - The vesting start and distribution points remain aligned in real-world time.
 - However, due to the change in slot duration, the schedule as measured in slot numbers is adjusted accordingly.
+
+**Test Case 5: Epoch Duration Verification**
+
+Epochs complete in approximately 178.5 hours (7.4 days) of real-world time:
+
+- Measure the real-world time duration between epoch boundaries
+- Verify that epochs contain exactly 7,140 slots at the new 90-second slot time
+- Confirm that scripts calculating staking rewards work well under the new frequency
+- This can be validated by monitoring epoch transitions and measuring intervals between them
 
 # Reference Implementation
 
