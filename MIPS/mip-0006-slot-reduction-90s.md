@@ -51,9 +51,11 @@ Following protocol modifications are required to implement this change:
 
 ## Prerequisites
 
-This update requires a prerequisite improvement to the SNARK work production code, which will be delivered before the hard fork as part of a soft fork update. This improvement will allow coordinators to use workers more efficiently by giving them smaller pieces for proving. See Appendix for more details.
+This update requires a prerequisite improvement to the SNARK work production code, which will be delivered before the hard fork as part of a soft fork update. This improvement enables parallel processing of SNARK work across multiple workers, addressing one of the bottlenecks that necessitated the current 180-second slot time.
 
-After delivering that update, the network will require at least some of the community members running the SNARK workers to run multiple (at least 4) SNARK workers per coordinator to ensure timely processing of SNARK work for the heaviest transactions.
+After delivering that update, some community members running SNARK coordinators should deploy multiple workers (at least 4 workers per coordinator) to ensure optimal SNARK work processing for maximum-cost transactions under the new 90-second slot timing.
+
+For detailed technical background on this optimization, including hardware specifications and processing requirements, see the "SNARK Worker Requirements" section in the Appendix.
 
 # Rationale
 
@@ -234,9 +236,37 @@ We have recently implemented a series of performance improvements that significa
 - [Enable disk-backed cache for the Mina daemon](https://github.com/MinaProtocol/mina/pull/16966)
 - [Reduce memory footprint of the verifier subprocess](https://github.com/MinaProtocol/mina/pull/16201)
 
+## SNARK Worker Requirements
+
+Under the current system, a single SNARK worker processes an entire maximum-cost zkApp transaction sequentially. These transactions comprise multiple account updates that are currently processed one after another by a single worker, taking 70-150 seconds (120s median) on average-specification hardware. The previous 180-second slot time was calibrated to ensure that **two** maximum-cost transactions can be sequentially processed within 2 slots (360 seconds total), as required by the parallel scan state tree architecture to avoid throughput bottlenecks.
+
+### Parallel Processing Solution
+
+The prerequisite optimization enables coordinators to distribute SNARK work across multiple workers, allowing the multiple account updates within zkApp transactions to be processed in parallel rather than sequentially by a single worker. With this change:
+
+- Account updates within a maximum-cost zkApp transaction can be divided among multiple workers
+- Processing time decreases significantly with additional workers (up to a certain limit)
+- The network can maintain full blocks of maximum-cost transactions without SNARK processing becoming a bottleneck
+
+### Worker Deployment Requirements
+
+After delivering the prerequisite update, some community members running SNARK coordinators should deploy multiple workers to ensure optimal performance:
+
+- **Minimum recommendation**: At least 4 workers per coordinator for processing maximum-cost transactions within the new 90-second slot timing
+- **Hardware specification**: Expecting 4 CPU cores per SNARK worker (specification to be confirmed through final rounds of testing)
+- **Network coverage**: Not all coordinators need to run 4+ workers, but sufficient network coverage is needed to prevent processing bottlenecks
+
+The critical requirement is that SNARK work for transactions included in a block must be completed before subsequent blocks need to be created (typically within a few slot intervals). If SNARK work lags behind, blocks may contain fewer than the maximum possible transactions (128) even when more transactions are available in the transaction pool, reducing network throughput.
+
+Proposed prerequisite optimization directly addresses the processing constraint that necessitated the current 180-second slot time and is essential for enabling the proposed reduction to 90 seconds.
+
 ## SNARK worker optimization
 
-This optimization is a prerequisite for reducing the slot time. The core idea is to enable the SNARK coordinator to communicate with workers using a new, more efficient protocol. Under the current protocol—particularly for "base proofs"—the entire transaction is sent to the SNARK worker. The worker then processes the transaction, which involves computing up to 11 SNARK proofs sequentially (6 base proofs followed by 5 merge proofs).
+This section provides the technical implementation details for the SNARK worker optimization described in the "SNARK Worker Requirements" section above.
+
+The optimization works by changing how SNARK coordinators communicate with workers. Under the current protocol—particularly for "base proofs"—the entire transaction is sent to the SNARK worker, which then processes all account updates sequentially. The new protocol enables coordinators to distribute individual account updates across multiple workers for parallel processing.
+
+Under the current protocol — particularly for "base proofs" — the entire transaction is sent to the SNARK worker. The worker then processes the transaction, which involves computing up to 11 SNARK proofs sequentially (6 base proofs followed by 5 merge proofs).
 
 ```
     update_1   update_2   update_3   update_4   update_5   fee_payer
@@ -284,7 +314,7 @@ This approach improves upon the current scheme: while the total computation time
 
 An important detail is that the SNARK coordinator dispatches work to the workers in pairs, and each individual worker processes tasks sequentially. As a result, the realistic comparison is between the current `22p` (sequential execution by a single worker) and the optimized `4p` (parallelized execution). By modifying the coordinator to utilize a larger pool of workers, we can reduce SNARK work latency by up to a factor of **6.5×**. This improvement is achievable with at least ten SNARK workers per coordinator, though latency improvements begin to materialize with any number greater than one.
 
-This reduction in latency is sufficient to support a halving of slot time, and it also enables a doubling of the number of account updates per zkApp transaction. Notably, this optimization does not require any protocol changes and therefore does not constitute a separate MIP.
+This reduction in latency is sufficient to support a halving of slot time, and it also enables a raise in the number of account updates per zkApp transaction (subject of another MIP considered for the upcoming Fall 2025 hardfork). Notably, this optimization does not require any protocol changes and therefore does not constitute a separate MIP.
 
 # Copyright
 
