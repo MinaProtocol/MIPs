@@ -89,6 +89,17 @@ Testing on various hardware configurations prior to implementation was a necessa
 
 Unsetting the zkapp soft limit configuration option by default will increase the RAM consumption of Mina nodes. However, recently implemented [RAM optimizations](https://github.com/MinaProtocol/mina/pull/16966) ensure that RAM usage after this removal remains well below the recommended [RAM specifications](https://docs.minaprotocol.com/berkeley-upgrade/requirements) for Mina node deployment.
 
+## Community Infrastructure Impact
+
+The reduced slot time and epoch duration changes may require adjustments to community infrastructure and tooling:
+
+- **Block explorers**: May need updates to display timing correctly and handle the increased frequency of blocks and epoch transitions
+- **Staking pool operations**: Payout processes and reward distribution systems may require adjustment to accommodate twice-weekly epoch transitions instead of weekly
+- **Monitoring tools**: Scripts and dashboards that track network metrics or operate on epoch boundaries will need to account for the new timing
+- **Third-party integrations**: Applications that rely on specific timing assumptions may need updates to handle the faster block production and epoch cycles
+
+Community members operating infrastructure should evaluate their systems before the hard fork to identify any timing dependencies that may require updates. While the protocol changes are backward compatible in terms of data structures, the timing changes may affect operational procedures and automated systems.
+
 ## Epoch Transition Frequency
 
 The reduction in slot time will decrease the real-world duration of epochs while maintaining the same number of slots per epoch. Currently, with 7,140 slots per epoch at 180 seconds per slot, each epoch lasts 357 hours (approximately 14.9 days). With the new 90-second slot time, epochs will last 178.5 hours (approximately 7.4 days).
