@@ -6,7 +6,7 @@ authors: George Agapov <george@o1labs.org>, Christian Despres <christian@o1labs.
 discussions-to: <to be provided> 
 status: Review
 type: Meta
-category: Engineering
+category: Core
 created: 2025-06-05
 ---
 
