@@ -4,7 +4,7 @@ title: Reduce slot time to 90s
 description: This MIP proposes to reduce the slot time in Mina's Ouroboros Samasika consensus protocol from 180 seconds to 90 seconds, enabling more frequent block creation and doubling network throughput while maintaining system stability.
 authors: George Agapov <george@o1labs.org>, Christian Despres <christian@o1labs.org>
 discussions-to: <to be provided> 
-status: Review
+status: Last call
 type: Meta
 category: Core
 created: 2025-06-05
@@ -94,7 +94,7 @@ Unsetting the zkapp soft limit configuration option by default will increase the
 The reduced slot time and epoch duration changes may require adjustments to community infrastructure and tooling:
 
 - **Block explorers**: May need updates to display timing correctly and handle the increased frequency of blocks and epoch transitions
-- **Staking pool operations**: Payout processes and reward distribution systems may require adjustment to accommodate twice-weekly epoch transitions instead of weekly
+- **Staking pool operations**: Payout processes and reward distribution systems may require adjustment to accommodate weekly epoch transitions instead of twice-weekly
 - **Monitoring tools**: Scripts and dashboards that track network metrics or operate on epoch boundaries will need to account for the new timing
 - **Third-party integrations**: Applications that rely on specific timing assumptions may need updates to handle the faster block production and epoch cycles
 
