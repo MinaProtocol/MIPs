@@ -5,6 +5,7 @@ description: This MIP proposes to reduce the slot time in Mina's Ouroboros Samas
 authors: George Agapov <george@o1labs.org>, Christian Despres <christian@o1labs.org>
 discussions-to: https://forums.minaprotocol.com/t/reduce-slot-time-to-90s/6865 
 status: Last call
+last-call-deadline: 2025-09-02
 type: Meta
 category: Core
 created: 2025-06-05
