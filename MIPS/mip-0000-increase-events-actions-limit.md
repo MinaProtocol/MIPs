@@ -1,7 +1,7 @@
 ---
 mip: <to be assigned>
 title: Increase Events&Actions Limit
-description: This MIP proposes raising the limit on zkApp transaction events and actions from 100 to 1024 field elements per transaction, removing the per-event/action cap of 16, to enable more complex zkApps while preserving Mina’s performance guarantees.
+description: This MIP proposes raising zkApp event and action limits to 1024 field elements per transaction, enabling more complex applications while maintaining performance.
 authors: Yihang Liu <corvo@o1labs.org>
 discussions-to: TODO
 status: Draft
