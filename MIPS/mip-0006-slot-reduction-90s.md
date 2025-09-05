@@ -4,7 +4,7 @@ title: Reduce slot time to 90s
 description: This MIP proposes to reduce the slot time in Mina's Ouroboros Samasika consensus protocol from 180 seconds to 90 seconds, enabling more frequent block creation and doubling network throughput while maintaining system stability.
 authors: George Agapov <george@o1labs.org>, Christian Despres <christian@o1labs.org>
 discussions-to: https://forums.minaprotocol.com/t/reduce-slot-time-to-90s/6865 
-status: Last call
+status: Finalization
 last-call-deadline: 2025-09-02
 type: Meta
 category: Core
