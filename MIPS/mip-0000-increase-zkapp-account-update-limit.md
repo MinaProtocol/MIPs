@@ -30,7 +30,7 @@ By increasing these limits, we can enable more sophisticated zkApps that better 
 
 ### Prerequisites
 
-- [**SNARK worker optimization](https://github.com/MinaProtocol/MIPs/blob/georgeee/mip-0006-slot-reduction-90s/MIPS/mip-0006-slot-reduction-90s.md#snark-worker-optimization) from the Slot reduction MIP:** The optimization for proof-level parallelization (instead of command-level) must be deployed and tested on CI, devnet and mainnet before the hardfork. This ensures SNARK workers can efficiently process individual proofs within a proof tree, enabling the expected latency improvements.
+- **[SNARK worker optimization](https://github.com/MinaProtocol/MIPs/blob/georgeee/mip-0006-slot-reduction-90s/MIPS/mip-0006-slot-reduction-90s.md#snark-worker-optimization) from the Slot reduction MIP**: The optimization for proof-level parallelization (instead of command-level) must be deployed and tested on CI, devnet and mainnet before the hardfork. This ensures SNARK workers can efficiently process individual proofs within a proof tree, enabling the expected latency improvements.
 
 ### Modifications
 
