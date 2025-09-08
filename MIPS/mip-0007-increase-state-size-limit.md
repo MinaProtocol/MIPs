@@ -1,5 +1,5 @@
 ---
-mip: MIP9
+mip: MIP7
 title: Increase On-Chain State Size Limit
 description: This MIP proposes to increase the on-chain state size of accounts from 8 field elements to 32 field elements, enabling zkApps to store more data directly in zkApp accounts on Mina.
 authors: Florian Kluge <florian.kluge@o1labs.org>
