@@ -4,7 +4,8 @@ title: Increase On-Chain State Size Limit
 description: This MIP proposes to increase the on-chain state size of accounts from 8 field elements to 32 field elements, enabling zkApps to store more data directly in zkApp accounts on Mina.
 authors: Florian Kluge <florian.kluge@o1labs.org>
 discussions-to: https://forums.minaprotocol.com/t/increase-on-chain-state-size-limit/6961
-status: Review
+status: Last Call
+last-call-deadline: 2025-10-13
 type: Meta
 category: Core
 created: 2025-08-22
