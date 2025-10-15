@@ -4,7 +4,8 @@ title: Increase zkApp Account Update Limit
 description: This MIP triples the zkApp account update limit with a new simple rule (np + n2 + n1 ≤ 16), requiring a hard fork and enabling more complex, efficient zkApps.
 authors: Yihang Liu <corvo@o1labs.org>
 discussions-to: https://forums.minaprotocol.com/t/increase-zkapp-account-update-limit/6965
-status: Review
+status: Last Call
+last-call-deadline: 2025-10-29
 type: Meta
 category: Core
 created: 2025-09-04
